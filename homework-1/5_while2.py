@@ -15,13 +15,7 @@
     
 """
 
-questions_and_answers = [
-        {"ask": 'Привет', "answer": 'Привет'},
-        {"ask": 'Как дела?', "answer": 'Хорошо'},
-        {"ask": 'Что делаешь?', "answer": 'Работаю'},
-        {"ask": 'Как работа?', "answer": 'Прекрасно!'},
-        {"ask": 'Как семья, дети?', "answer": 'Отлично!'}
-    ]
+questions_and_answers = {"Привет": "Привет", "Как дела?": "Хорошо", 'Что делаешь?': 'Работаю', 'Как работа?': 'Прекрасно!', 'Как семья, дети?': 'Отлично!'}
 
 
 def ask_user(questions_and_answers):
@@ -31,18 +25,17 @@ def ask_user(questions_and_answers):
     d = 0
     ask = 0
     
-    
     while True:
-        print('')
-        ask = input('Введите ваш вопрос: ')
-        for d in range(len(questions_and_answers)):
-            if ask == questions_and_answers[d]["ask"]:
-                print('')
-                print(f'Пользователь: {questions_and_answers[d]["ask"]}')
-                print(f'Программа: {questions_and_answers[d]["answer"]}')
-                print('')
-            else:
-                ask
+        try:
+        ask = input('\nВведите ваш вопрос: ')
+        if ask == questions_and_answers[ask]:
+            print(f'\nПользователь: {ask}')
+            print(f'Программа: {questions_and_answers[ask]}\n')
+        else:
+            ask
+        except KeyError:
+            print('Введённый запрос отсутствует в списке')
+
 
 
 if __name__ == "__main__":

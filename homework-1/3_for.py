@@ -27,7 +27,7 @@ def main():
     c = 0
     sum_class = 0
     count_pupils = 0
-    for c in range(len(s)):
+    for c in s:
         sum_class += sum(s[c]['scores'])
         count_pupils += len(s[c]['scores'])
         print(f"Класс: {s[c]['school_class']}, средний балл: {sum(s[c]['scores'])/len(s[c]['scores'])}")
