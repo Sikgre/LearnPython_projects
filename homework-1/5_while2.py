@@ -27,12 +27,13 @@ def ask_user(questions_and_answers):
     
     while True:
         try:
-        ask = input('\nВведите ваш вопрос: ')
-        if ask == questions_and_answers[ask]:
-            print(f'\nПользователь: {ask}')
-            print(f'Программа: {questions_and_answers[ask]}\n')
-        else:
-            ask
+            ask = input('\nВведите ваш вопрос: ')
+            if questions_and_answers.get(ask):
+                print(f'\nПользователь: {ask}')
+                print(f'Программа: {questions_and_answers[ask]}\n')
+            else:
+                print('Введённый запрос отсутствует в списке')
+                ask
         except KeyError:
             print('Введённый запрос отсутствует в списке')
 

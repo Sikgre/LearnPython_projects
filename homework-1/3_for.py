@@ -27,9 +27,10 @@ def main():
     c = 0
     sum_class = 0
     count_pupils = 0
-    for c in s:
+
+    for c, item in enumerate(s):
         sum_class += sum(s[c]['scores'])
-        count_pupils += len(s[c]['scores'])
+        count_pupils += len(s[c]['scores']) 
         print(f"Класс: {s[c]['school_class']}, средний балл: {sum(s[c]['scores'])/len(s[c]['scores'])}")
     print(f"Средний балл по школе: {round(sum_class/count_pupils, 3)}")
 
